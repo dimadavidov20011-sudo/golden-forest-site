@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golden Forest</title>
+<title>Golden Forest Дніпро</title>
 
 <style>
 *{
@@ -107,14 +107,16 @@ border:1px solid rgba(255,255,255,0.08);
 .section h2{
 font-size:34px;
 margin-bottom:25px;
-color:#ffffff;
+color:white;
 }
 
-.instagram-btn{
+.instagram-btn,
+.map-btn,
+.book-btn{
 display:inline-flex;
-align-items:center;
 justify-content:center;
-gap:12px;
+align-items:center;
+gap:10px;
 padding:18px 35px;
 background:#d6ab3d;
 color:black;
@@ -123,9 +125,12 @@ font-weight:bold;
 border-radius:15px;
 font-size:22px;
 transition:0.3s;
+margin-top:15px;
 }
 
-.instagram-btn:hover{
+.instagram-btn:hover,
+.map-btn:hover,
+.book-btn:hover{
 transform:scale(1.05);
 }
 
@@ -140,23 +145,6 @@ align-items:center;
 gap:12px;
 flex-wrap:wrap;
 text-align:center;
-}
-
-.book-btn{
-display:inline-block;
-margin-top:25px;
-padding:18px 40px;
-background:#d6ab3d;
-color:black;
-font-weight:bold;
-font-size:22px;
-text-decoration:none;
-border-radius:15px;
-transition:0.3s;
-}
-
-.book-btn:hover{
-transform:scale(1.05);
 }
 
 .footer{
@@ -207,24 +195,19 @@ padding:25px 15px;
 font-size:28px;
 }
 
-.instagram-btn{
-font-size:18px;
-padding:16px 25px;
+.instagram-btn,
+.map-btn,
+.book-btn{
 width:100%;
 max-width:320px;
+font-size:18px;
+padding:16px 20px;
 }
 
 .info-line{
 font-size:22px;
 flex-direction:column;
 gap:8px;
-}
-
-.book-btn{
-width:100%;
-max-width:320px;
-font-size:20px;
-padding:16px;
 }
 }
 </style>
@@ -234,6 +217,7 @@ padding:16px;
 <div class="container">
 
 <h1>Golden Forest</h1>
+
 <div class="subtitle">
 Місце для ідеального відпочинку на природі
 </div>
@@ -287,13 +271,22 @@ target="_blank">
 📍 Біла Балка 42
 </div>
 
-<a class="book-btn" href="tel:+380958988327">
-Зателефонувати зараз
+<a class="map-btn"
+href="https://maps.google.com/?q=Біла+Балка+42+Дніпро"
+target="_blank">
+🗺️ Знайти нас на карті
+</a>
+
+<br>
+
+<a class="book-btn"
+href="tel:+380958988327">
+📞 Зателефонувати зараз
 </a>
 </div>
 
 <div class="footer">
-Golden Forest © 2025
+Golden Forest © 2026
 </div>
 
 </div>
