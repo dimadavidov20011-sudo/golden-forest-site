@@ -10,19 +10,55 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
 font-family:Arial,sans-serif;
+background:#0d1f12;
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
 background:
-linear-gradient(rgba(0,25,10,0.75),rgba(0,25,10,0.85)),
+linear-gradient(rgba(0,20,0,.35),rgba(0,20,0,.55)),
 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
-color:white;
-text-align:center;
-min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+padding:20px;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:140px;
+background:linear-gradient(to bottom, transparent, #0d1f12);
+}
+
+h1{
+font-size:56px;
+color:#f4d06f;
+margin-bottom:15px;
+z-index:1;
+}
+
+.subtitle{
+font-size:22px;
+max-width:700px;
+padding:0 20px;
+z-index:1;
 }
 
 .container{
@@ -30,18 +66,6 @@ width:100%;
 max-width:1200px;
 margin:auto;
 padding:40px 20px;
-}
-
-h1{
-font-size:42px;
-margin-bottom:15px;
-color:#f4d06f;
-}
-
-.subtitle{
-font-size:20px;
-margin-bottom:50px;
-color:#ffffff;
 }
 
 .cards{
@@ -63,12 +87,6 @@ justify-content:center;
 align-items:center;
 text-align:center;
 min-height:280px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-background:rgba(0,60,25,0.65);
 }
 
 .card-icon{
@@ -80,7 +98,6 @@ margin-bottom:20px;
 font-size:34px;
 color:#f4d06f;
 margin-bottom:20px;
-line-height:1.3;
 font-weight:normal;
 }
 
@@ -91,23 +108,17 @@ max-width:220px;
 }
 
 .section{
-margin-top:40px;
-margin-bottom:50px;
+margin:40px 0;
 padding:35px 20px;
-background:linear-gradient(
-135deg,
-rgba(20,60,25,0.7),
-rgba(10,35,15,0.75)
-);
-border-radius:25px;
+background:rgba(0,50,20,0.55);
 backdrop-filter:blur(8px);
-border:1px solid rgba(255,255,255,0.08);
+border:1px solid rgba(255,215,120,0.25);
+border-radius:25px;
 }
 
 .section h2{
 font-size:34px;
 margin-bottom:25px;
-color:white;
 }
 
 .instagram-btn,
@@ -124,14 +135,7 @@ text-decoration:none;
 font-weight:bold;
 border-radius:15px;
 font-size:22px;
-transition:0.3s;
 margin-top:15px;
-}
-
-.instagram-btn:hover,
-.map-btn:hover,
-.book-btn:hover{
-transform:scale(1.05);
 }
 
 .info-line{
@@ -144,38 +148,34 @@ justify-content:center;
 align-items:center;
 gap:12px;
 flex-wrap:wrap;
-text-align:center;
 }
 
 .footer{
 margin-top:40px;
-opacity:0.8;
+opacity:.8;
 font-size:15px;
+padding-bottom:30px;
 }
 
 @media(max-width:768px){
+.hero{
+background-attachment:scroll;
+}
+
+h1{
+font-size:38px;
+}
+
+.subtitle{
+font-size:18px;
+}
 
 .container{
 padding:25px 15px;
 }
 
-h1{
-font-size:30px;
-}
-
-.subtitle{
-font-size:17px;
-margin-bottom:35px;
-}
-
 .cards{
 grid-template-columns:1fr;
-gap:18px;
-}
-
-.card{
-min-height:auto;
-padding:30px 20px;
 }
 
 .card h3{
@@ -185,10 +185,6 @@ font-size:26px;
 .card p{
 font-size:17px;
 max-width:100%;
-}
-
-.section{
-padding:25px 15px;
 }
 
 .section h2{
@@ -214,13 +210,12 @@ gap:8px;
 </head>
 <body>
 
-<div class="container">
-
+<section class="hero">
 <h1>Golden Forest</h1>
+<div class="subtitle">Місце для ідеального відпочинку на природі</div>
+</section>
 
-<div class="subtitle">
-Місце для ідеального відпочинку на природі
-</div>
+<div class="container">
 
 <div class="cards">
 
@@ -252,42 +247,19 @@ gap:8px;
 
 <div class="section">
 <h2>Наш Instagram</h2>
-
-<a class="instagram-btn"
-href="https://instagram.com/golden_forest_dnipro"
-target="_blank">
-📷 @golden_forest_dnipro
-</a>
+<a class="instagram-btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">📷 @golden_forest_dnipro</a>
 </div>
 
 <div class="section">
 <h2>Бронювання</h2>
-
-<div class="info-line">
-📞 +380 95 898 83 27
-</div>
-
-<div class="info-line">
-📍 Біла Балка 42
-</div>
-
-<a class="map-btn"
-href="https://www.google.com/maps?q=48.463791387718715,34.86250651072183"
-target="_blank">
-🗺️ Знайти нас на карті
-</a>
-
+<div class="info-line">📞 +380 95 898 83 27</div>
+<div class="info-line">📍 Біла Балка 42</div>
+<a class="map-btn" href="https://www.google.com/maps?q=48.463791387718715,34.86250651072183" target="_blank">🗺️ Знайти нас на карті</a>
 <br>
-
-<a class="book-btn"
-href="tel:+380958988327">
-📞 Зателефонувати зараз
-</a>
+<a class="book-btn" href="tel:+380958988327">📞 Зателефонувати зараз</a>
 </div>
 
-<div class="footer">
-Golden Forest © 2026
-</div>
+<div class="footer">Golden Forest © 2026</div>
 
 </div>
 
