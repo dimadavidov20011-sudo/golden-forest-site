@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Forest — Золотой лес</title>
+  <title>Golden Forest — Відпочинок на природі</title>
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#f4f8f2; color:#222; }
-    header { background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; color:white; text-align:center; padding:120px 20px; }
-    header h1 { font-size:48px; margin-bottom:10px; }
-    header p { font-size:22px; }
-    .btn { display:inline-block; margin-top:20px; padding:14px 28px; background:#2e7d32; color:white; text-decoration:none; border-radius:10px; }
-    section { max-width:1000px; margin:auto; padding:60px 20px; }
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-    .card { background:white; padding:20px; border-radius:14px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    footer { background:#111; color:white; text-align:center; padding:30px; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, sans-serif; color:#fff; background:#0f1a12; }
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover;
+      display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px;
+    }
+    h1 { font-size: 4rem; margin:0; color:#f3d27a; }
+    p { font-size: 1.2rem; max-width: 700px; }
+    .btn {
+      margin-top: 20px; padding: 15px 30px; border:none; border-radius: 10px;
+      background:#d4a93a; color:#1b1b1b; font-size:1.1rem; cursor:pointer; text-decoration:none; font-weight:bold;
+    }
+    .section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+    .card { background:#1b2a1d; padding:25px; border-radius:16px; }
+    .phone, .address { font-size:1.4rem; color:#f3d27a; font-weight:bold; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Golden Forest — Золотой лес</h1>
-    <p>Отдых на природе с комфортом</p>
-    <a href="#booking" class="btn">Забронировать</a>
-  </header>
+  <section class="hero">
+    <h1>Golden Forest</h1>
+    <p>Затишний відпочинок на природі: альтанки, мангали та столики серед лісу. Незабаром: будинок для оренди, басейн та лазня.</p>
+    <a class="btn" href="tel:+380958988327">📞 Забронювати: +380 95 898 83 27</a>
+  </section>
 
-  <section>
-    <h2>Наши зоны отдыха</h2>
+  <section class="section">
+    <h2>Що у нас є</h2>
     <div class="cards">
-      <div class="card"><h3>Беседки</h3><p>Уютные беседки для семьи и друзей</p></div>
-      <div class="card"><h3>Мангал-зоны</h3><p>Полностью оборудованные места для шашлыка</p></div>
-      <div class="card"><h3>Столики</h3><p>Комфортные места на природе</p></div>
-      <div class="card"><h3>Скоро: Дом</h3><p>Дом в аренду для отдыха с ночёвкой</p></div>
-      <div class="card"><h3>Скоро: Бассейн</h3><p>Летний бассейн для гостей</p></div>
-      <div class="card"><h3>Скоро: Баня</h3><p>Баня для полного расслабления</p></div>
+      <div class="card">🌲 Альтанки в лісі</div>
+      <div class="card">🔥 Мангали для відпочинку</div>
+      <div class="card">🪑 Столики на природі</div>
+      <div class="card">🏡 Незабаром: будинок, басейн та лазня</div>
     </div>
   </section>
 
-  <section>
-    <h2>Цены</h2>
-    <p>Столик — от 300 грн</p>
-    <p>Мангал-зона — от 500 грн</p>
-    <p>Беседка малая — от 800 грн</p>
-    <p>Беседка большая — от 1500 грн</p>
-  </section>
+  <section class="section" style="text-align:center;">
+    <h2>Наш Instagram</h2>
+    <p><a class="btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">📷 @golden_forest_dnipro</a></p>
 
-  <section id="booking">
-    <h2>Бронирование</h2>
-    <p>Телефон и адрес добавим позже.</p>
+  <section class="section" style="text-align:center;">
+    <h2>Бронювання</h2>
+    <p>Телефонуйте для бронювання:</p>
+    <p class="phone">+380 95 898 83 27</p>
+    <p>Адреса:</p>
+    <p class="address">Біла Балка 42</p>
+    <a class="btn" href="tel:+380958988327">Зателефонувати зараз</a>
   </section>
-
-  <footer>
-    <p>Golden Forest — Золотой лес</p>
-  </footer>
 </body>
 </html>
