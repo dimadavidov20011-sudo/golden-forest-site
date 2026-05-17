@@ -4,27 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Golden Forest Дніпро</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 
 body{
-font-family:Arial,sans-serif;
+font-family:'Montserrat',sans-serif;
 background:#0d1f12;
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
+/* floating decorative elements */
+.floating-leaf,.floating-spark{
+position:fixed;
+pointer-events:none;
+z-index:0;
+animation:float 8s ease-in-out infinite;
+opacity:.25;
+}
+.floating-leaf{font-size:40px;}
+.floating-spark{font-size:24px; animation-duration:6s;}
+.leaf1{top:10%;left:5%;}
+.leaf2{top:65%;right:6%;animation-delay:2s;}
+.spark1{top:25%;right:10%;}
+.spark2{bottom:15%;left:8%;animation-delay:1.5s;}
+
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,20,0,.35),rgba(0,20,0,.55)),
+linear-gradient(rgba(0,20,0,.35),rgba(0,20,0,.6)),
 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
@@ -36,179 +49,97 @@ align-items:center;
 position:relative;
 padding:20px;
 }
-
 .hero::after{
-content:'';
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-height:140px;
+content:'';position:absolute;bottom:0;left:0;width:100%;height:140px;
 background:linear-gradient(to bottom, transparent, #0d1f12);
 }
 
 h1{
-font-size:56px;
-color:#f4d06f;
-margin-bottom:15px;
-z-index:1;
+font-size:56px;color:#f4d06f;margin-bottom:15px;z-index:1;
+animation:fadeUp 1.2s ease;
+text-shadow:0 0 20px rgba(244,208,111,.35);
 }
-
 .subtitle{
-font-size:22px;
-max-width:700px;
-padding:0 20px;
-z-index:1;
+font-size:22px;max-width:700px;padding:0 20px;z-index:1;
+animation:fadeUp 1.8s ease;
 }
 
-.container{
-width:100%;
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
-}
+.container{width:100%;max-width:1200px;margin:auto;padding:40px 20px;position:relative;z-index:1;}
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-bottom:70px;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-bottom:70px;
 }
 
 .card{
 background:rgba(0,50,20,0.55);
-backdrop-filter:blur(8px);
+backdrop-filter:blur(12px);
 border:1px solid rgba(255,215,120,0.25);
 border-radius:25px;
 padding:35px 25px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-min-height:280px;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;min-height:280px;
+transition:transform .4s ease, box-shadow .4s ease;
+animation:fadeUp 1s ease both;
+}
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 10px 35px rgba(244,208,111,.18);
 }
 
-.card-icon{
-font-size:54px;
-margin-bottom:20px;
-}
-
-.card h3{
-font-size:34px;
-color:#f4d06f;
-margin-bottom:20px;
-font-weight:normal;
-}
-
-.card p{
-font-size:18px;
-line-height:1.5;
-max-width:220px;
-}
+.card-icon{font-size:54px;margin-bottom:20px;animation:pulse 3s infinite;}
+.card h3{font-size:30px;color:#f4d06f;margin-bottom:20px;font-weight:600;}
+.card p{font-size:18px;line-height:1.5;max-width:220px;}
 
 .section{
-margin:40px 0;
-padding:35px 20px;
+margin:40px 0;padding:35px 20px;
 background:rgba(0,50,20,0.55);
-backdrop-filter:blur(8px);
+backdrop-filter:blur(10px);
 border:1px solid rgba(255,215,120,0.25);
 border-radius:25px;
+animation:fadeUp 1s ease both;
 }
+.section h2{font-size:34px;margin-bottom:25px;}
 
-.section h2{
-font-size:34px;
-margin-bottom:25px;
+.instagram-btn,.map-btn,.book-btn{
+display:inline-flex;justify-content:center;align-items:center;gap:10px;
+padding:18px 35px;background:#d6ab3d;color:black;text-decoration:none;
+font-weight:bold;border-radius:15px;font-size:22px;margin-top:15px;
+transition:all .3s ease;
 }
-
-.instagram-btn,
-.map-btn,
-.book-btn{
-display:inline-flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-padding:18px 35px;
-background:#d6ab3d;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:15px;
-font-size:22px;
-margin-top:15px;
+.instagram-btn:hover,.map-btn:hover,.book-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(214,171,61,.35);
 }
 
 .info-line{
-font-size:28px;
-margin:18px 0;
-color:#f4d06f;
-font-weight:bold;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:12px;
-flex-wrap:wrap;
+font-size:28px;margin:18px 0;color:#f4d06f;font-weight:bold;
+display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;
 }
+.footer{margin-top:40px;opacity:.8;font-size:15px;padding-bottom:30px;}
 
-.footer{
-margin-top:40px;
-opacity:.8;
-font-size:15px;
-padding-bottom:30px;
-}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
+@keyframes float{
+0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);} }
+@keyframes pulse{
+0%,100%{transform:scale(1);}50%{transform:scale(1.08);} }
 
 @media(max-width:768px){
-.hero{
-background-attachment:scroll;
-}
-
-h1{
-font-size:38px;
-}
-
-.subtitle{
-font-size:18px;
-}
-
-.container{
-padding:25px 15px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.card h3{
-font-size:26px;
-}
-
-.card p{
-font-size:17px;
-max-width:100%;
-}
-
-.section h2{
-font-size:28px;
-}
-
-.instagram-btn,
-.map-btn,
-.book-btn{
-width:100%;
-max-width:320px;
-font-size:18px;
-padding:16px 20px;
-}
-
-.info-line{
-font-size:22px;
-flex-direction:column;
-gap:8px;
-}
+.hero{background-attachment:scroll;} h1{font-size:38px;} .subtitle{font-size:18px;}
+.container{padding:25px 15px;} .cards{grid-template-columns:1fr;}
+.card h3{font-size:26px;} .card p{font-size:17px;max-width:100%;}
+.section h2{font-size:28px;}
+.instagram-btn,.map-btn,.book-btn{width:100%;max-width:320px;font-size:18px;padding:16px 20px;}
+.info-line{font-size:22px;flex-direction:column;gap:8px;}
 }
 </style>
 </head>
 <body>
+
+<div class="floating-leaf leaf1">🌿</div>
+<div class="floating-leaf leaf2">🍃</div>
+<div class="floating-spark spark1">✨</div>
+<div class="floating-spark spark2">✨</div>
 
 <section class="hero">
 <h1>Golden Forest</h1>
@@ -216,7 +147,6 @@ gap:8px;
 </section>
 
 <div class="container">
-
 <div class="cards">
 
 <div class="card">
@@ -235,6 +165,12 @@ gap:8px;
 <div class="card-icon">🪑</div>
 <h3>Столики на природі</h3>
 <p>Комфортні столики для компаній та сімейних зустрічей</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📶</div>
+<h3>Безкоштовний Wi‑Fi</h3>
+<p>Швидкий інтернет на всій території комплексу</p>
 </div>
 
 <div class="card">
@@ -260,8 +196,6 @@ gap:8px;
 </div>
 
 <div class="footer">Golden Forest © 2026</div>
-
 </div>
-
 </body>
 </html>
