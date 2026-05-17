@@ -6,23 +6,70 @@
   <title>Golden Forest — Відпочинок на природі</title>
   <style>
     * { box-sizing: border-box; }
-    body { margin:0; font-family: Arial, sans-serif; color:#fff; background:#0f1a12; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: #0f1a12;
+      text-align: center;
+    }
     .hero {
       min-height: 100vh;
       background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
         url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover;
-      display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
-    h1 { font-size: 4rem; margin:0; color:#f3d27a; }
-    p { font-size: 1.2rem; max-width: 700px; }
+    h1 { font-size: 4rem; margin: 0; color: #f3d27a; }
+    h2 { font-size: 2rem; margin-bottom: 30px; }
+    p { font-size: 1.2rem; max-width: 700px; margin: 10px auto; }
     .btn {
-      margin-top: 20px; padding: 15px 30px; border:none; border-radius: 10px;
-      background:#d4a93a; color:#1b1b1b; font-size:1.1rem; cursor:pointer; text-decoration:none; font-weight:bold;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      background: #d4a93a;
+      color: #1b1b1b;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
-    .card { background:#1b2a1d; padding:25px; border-radius:16px; }
-    .phone, .address { font-size:1.4rem; color:#f3d27a; font-weight:bold; }
+    .section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      justify-items: center;
+      align-items: stretch;
+    }
+    .card {
+      width: 100%;
+      min-height: 130px;
+      background: #1b2a1d;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1.3rem;
+      line-height: 1.4;
+    }
+    .phone, .address {
+      font-size: 1.8rem;
+      color: #f3d27a;
+      font-weight: bold;
+      margin: 15px 0;
+    }
   </style>
 </head>
 <body>
@@ -42,11 +89,12 @@
     </div>
   </section>
 
-  <section class="section" style="text-align:center;">
+  <section class="section">
     <h2>Наш Instagram</h2>
-    <p><a class="btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">📷 @golden_forest_dnipro</a></p>
+    <a class="btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">📷 @golden_forest_dnipro</a>
+  </section>
 
-  <section class="section" style="text-align:center;">
+  <section class="section">
     <h2>Бронювання</h2>
     <p>Телефонуйте для бронювання:</p>
     <p class="phone">+380 95 898 83 27</p>
@@ -56,3 +104,4 @@
   </section>
 </body>
 </html>
+
