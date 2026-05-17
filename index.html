@@ -2,10 +2,8 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Golden Forest</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,321 +13,287 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Inter,sans-serif;
-color:white;
-text-align:center;
+font-family:Arial,sans-serif;
 background:
-linear-gradient(rgba(0,20,0,.65),rgba(0,20,0,.88)),
+linear-gradient(rgba(0,25,10,0.75),rgba(0,25,10,0.85)),
 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
+color:white;
+text-align:center;
 min-height:100vh;
 }
 
 .container{
+width:100%;
 max-width:1200px;
 margin:auto;
 padding:40px 20px;
 }
 
-h1,h2{
-font-family:'Cormorant Garamond',serif;
-color:#e8c36d;
-}
-
-.hero{
-padding-top:60px;
-padding-bottom:60px;
-}
-
-.logo{
-font-size:80px;
-letter-spacing:6px;
-font-weight:700;
-line-height:0.9;
+h1{
+font-size:42px;
+margin-bottom:15px;
+color:#f4d06f;
 }
 
 .subtitle{
-margin-top:30px;
-font-size:34px;
-max-width:800px;
-margin-left:auto;
-margin-right:auto;
-line-height:1.4;
-text-shadow:0 2px 8px rgba(0,0,0,.5);
+font-size:20px;
+margin-bottom:50px;
+color:#ffffff;
 }
 
-.section-title{
-font-size:52px;
-margin-bottom:40px;
-}
-
-.features{
+.cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
-margin-bottom:80px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-bottom:70px;
 }
 
 .card{
-background:rgba(10,45,20,.6);
-border:1px solid rgba(232,195,109,.35);
-backdrop-filter:blur(12px);
-padding:35px 25px;
+background:rgba(0,50,20,0.55);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,215,120,0.25);
 border-radius:25px;
-box-shadow:0 0 20px rgba(0,0,0,.25);
-
+padding:35px 25px;
 display:flex;
 flex-direction:column;
-justify-content:flex-start;
+justify-content:center;
 align-items:center;
 text-align:center;
+min-height:280px;
+transition:0.3s;
+}
 
-min-height:300px;
+.card:hover{
+transform:translateY(-5px);
+background:rgba(0,60,25,0.65);
 }
 
 .card-icon{
-font-size:48px;
+font-size:54px;
 margin-bottom:20px;
 }
 
-.card-title{
-font-size:32px;
-font-family:'Cormorant Garamond',serif;
-color:#e8c36d;
-margin-bottom:18px;
-line-height:1.2;
-min-height:80px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+.card h3{
+font-size:34px;
+color:#f4d06f;
+margin-bottom:20px;
+line-height:1.3;
+font-weight:normal;
 }
 
-.card-text{
-font-size:20px;
+.card p{
+font-size:18px;
 line-height:1.5;
 max-width:220px;
-min-height:110px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
 }
 
-.instagram-section{
-margin-bottom:70px;
+.section{
+margin-top:40px;
+margin-bottom:50px;
+padding:35px 20px;
+background:linear-gradient(
+135deg,
+rgba(20,60,25,0.7),
+rgba(10,35,15,0.75)
+);
+border-radius:25px;
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.section h2{
+font-size:34px;
+margin-bottom:25px;
+color:#ffffff;
 }
 
 .instagram-btn{
 display:inline-flex;
 align-items:center;
-gap:15px;
-padding:22px 45px;
-border-radius:20px;
+justify-content:center;
+gap:12px;
+padding:18px 35px;
+background:#d6ab3d;
+color:black;
 text-decoration:none;
-color:#e8c36d;
-font-size:28px;
-font-weight:600;
-background:rgba(10,45,20,.6);
-border:1px solid rgba(232,195,109,.4);
-backdrop-filter:blur(10px);
-transition:.3s;
+font-weight:bold;
+border-radius:15px;
+font-size:22px;
+transition:0.3s;
 }
 
 .instagram-btn:hover{
-transform:scale(1.04);
-background:rgba(20,60,30,.75);
+transform:scale(1.05);
 }
 
-.booking-box{
-max-width:750px;
-margin:auto;
-padding:50px;
-border-radius:30px;
-background:rgba(10,45,20,.65);
-border:1px solid rgba(232,195,109,.35);
-backdrop-filter:blur(14px);
-}
-
-.info-row{
-margin-top:30px;
-margin-bottom:30px;
-}
-
-.label{
-font-size:26px;
-margin-bottom:15px;
-}
-
-.info-box{
+.info-line{
+font-size:28px;
+margin:18px 0;
+color:#f4d06f;
+font-weight:bold;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:15px;
-font-size:42px;
-font-family:'Cormorant Garamond',serif;
-color:#e8c36d;
-padding:20px;
-border:1px solid rgba(232,195,109,.35);
-border-radius:18px;
-background:rgba(0,0,0,.2);
+gap:12px;
+flex-wrap:wrap;
+text-align:center;
 }
 
-.call-button{
-margin-top:30px;
+.book-btn{
 display:inline-block;
-background:linear-gradient(135deg,#d4a84b,#f2d47a);
-color:#17320d;
-font-weight:700;
-padding:22px 60px;
-border-radius:18px;
-font-size:26px;
+margin-top:25px;
+padding:18px 40px;
+background:#d6ab3d;
+color:black;
+font-weight:bold;
+font-size:22px;
 text-decoration:none;
-transition:.3s;
+border-radius:15px;
+transition:0.3s;
 }
 
-.call-button:hover{
+.book-btn:hover{
 transform:scale(1.05);
 }
 
 .footer{
-margin-top:70px;
-padding-bottom:30px;
-font-size:24px;
-color:#e8c36d;
-font-family:'Cormorant Garamond',serif;
+margin-top:40px;
+opacity:0.8;
+font-size:15px;
 }
 
 @media(max-width:768px){
 
-.logo{
-font-size:52px;
+.container{
+padding:25px 15px;
+}
+
+h1{
+font-size:30px;
 }
 
 .subtitle{
-font-size:24px;
+font-size:17px;
+margin-bottom:35px;
 }
 
-.section-title{
-font-size:38px;
+.cards{
+grid-template-columns:1fr;
+gap:18px;
 }
 
-.card-title{
+.card{
+min-height:auto;
+padding:30px 20px;
+}
+
+.card h3{
 font-size:26px;
 }
 
-.card-text{
-font-size:18px;
+.card p{
+font-size:17px;
+max-width:100%;
 }
 
-.info-box{
+.section{
+padding:25px 15px;
+}
+
+.section h2{
 font-size:28px;
 }
 
 .instagram-btn{
+font-size:18px;
+padding:16px 25px;
+width:100%;
+max-width:320px;
+}
+
+.info-line{
 font-size:22px;
-padding:18px 25px;
+flex-direction:column;
+gap:8px;
+}
+
+.book-btn{
+width:100%;
+max-width:320px;
+font-size:20px;
+padding:16px;
 }
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-<section class="hero">
-<h1 class="logo">GOLDEN<br>FOREST</h1>
-<p class="subtitle">
-Затишний відпочинок на природі<br>
-в оточенні лісу
-</p>
-</section>
+<h1>Golden Forest</h1>
+<div class="subtitle">
+Місце для ідеального відпочинку на природі
+</div>
 
-<h2 class="section-title">ЩО У НАС Є</h2>
-
-<section class="features">
+<div class="cards">
 
 <div class="card">
 <div class="card-icon">🌲</div>
-<div class="card-title">Альтанки в лісі</div>
-<div class="card-text">
-Затишні альтанки<br>
-серед дерев для<br>
-вашого відпочинку
-</div>
+<h3>Альтанки в лісі</h3>
+<p>Затишні альтанки серед дерев для вашого відпочинку</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🔥</div>
-<div class="card-title">Мангал для відпочинку</div>
-<div class="card-text">
-Усе необхідне для<br>
-смачного відпочинку<br>
-на природі
-</div>
+<h3>Мангал для відпочинку</h3>
+<p>Усе необхідне для смачного відпочинку на природі</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🪑</div>
-<div class="card-title">Столики на природі</div>
-<div class="card-text">
-Комфортні столики<br>
-для компаній та<br>
-сімейних зустрічей
-</div>
+<h3>Столики на природі</h3>
+<p>Комфортні столики для компаній та сімейних зустрічей</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🏡</div>
-<div class="card-title">Незабаром</div>
-<div class="card-text">
-Будинок, басейн та<br>
-лазня
-</div>
+<h3>Незабаром</h3>
+<p>Будинок, басейн та лазня</p>
 </div>
 
-</section>
+</div>
 
-<section class="instagram-section">
-<h2 class="section-title">НАШ INSTAGRAM</h2>
+<div class="section">
+<h2>Наш Instagram</h2>
 
-<a class="instagram-btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">
+<a class="instagram-btn"
+href="https://instagram.com/golden_forest_dnipro"
+target="_blank">
 📷 @golden_forest_dnipro
 </a>
-</section>
+</div>
 
-<section class="booking-box">
+<div class="section">
+<h2>Бронювання</h2>
 
-<h2 class="section-title">БРОНЮВАННЯ</h2>
-
-<div class="info-row">
-<div class="label">Телефонуйте для бронювання:</div>
-<div class="info-box">
+<div class="info-line">
 📞 +380 95 898 83 27
 </div>
-</div>
 
-<div class="info-row">
-<div class="label">Адреса:</div>
-<div class="info-box">
+<div class="info-line">
 📍 Біла Балка 42
 </div>
+
+<a class="book-btn" href="tel:+380958988327">
+Зателефонувати зараз
+</a>
 </div>
 
-<a class="call-button" href="tel:+380958988327">
-📞 ЗАТЕЛЕФОНУВАТИ ЗАРАЗ
-</a>
-
-</section>
-
 <div class="footer">
-Природа. Спокій. Комфорт.<br>
-Ваш ідеальний відпочинок у Golden Forest
+Golden Forest © 2025
 </div>
 
 </div>
