@@ -1,107 +1,307 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Golden Forest — Відпочинок на природі</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #fff;
-      background: #0f1a12;
-      text-align: center;
-    }
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
-        url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80') center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    h1 { font-size: 4rem; margin: 0; color: #f3d27a; }
-    h2 { font-size: 2rem; margin-bottom: 30px; }
-    p { font-size: 1.2rem; max-width: 700px; margin: 10px auto; }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 10px;
-      background: #d4a93a;
-      color: #1b1b1b;
-      font-size: 1.1rem;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      justify-items: center;
-      align-items: stretch;
-    }
-    .card {
-      width: 100%;
-      min-height: 130px;
-      background: #1b2a1d;
-      border-radius: 16px;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 1.3rem;
-      line-height: 1.4;
-    }
-    .phone, .address {
-      font-size: 1.8rem;
-      color: #f3d27a;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Golden Forest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,sans-serif;
+color:white;
+text-align:center;
+background:
+linear-gradient(rgba(0,20,0,.65),rgba(0,20,0,.88)),
+url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+min-height:100vh;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+h1,h2{
+font-family:'Cormorant Garamond',serif;
+color:#e8c36d;
+}
+
+.hero{
+padding-top:60px;
+padding-bottom:60px;
+}
+
+.logo{
+font-size:80px;
+letter-spacing:6px;
+font-weight:700;
+line-height:0.9;
+}
+
+.subtitle{
+margin-top:30px;
+font-size:34px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.4;
+text-shadow:0 2px 8px rgba(0,0,0,.5);
+}
+
+.section-title{
+font-size:52px;
+margin-bottom:40px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+margin-bottom:80px;
+}
+
+.card{
+background:rgba(10,45,20,.6);
+border:1px solid rgba(232,195,109,.35);
+backdrop-filter:blur(12px);
+padding:35px 25px;
+border-radius:25px;
+box-shadow:0 0 20px rgba(0,0,0,.25);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+min-height:240px;
+}
+
+.card-icon{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.card-title{
+font-size:32px;
+font-family:'Cormorant Garamond',serif;
+color:#e8c36d;
+margin-bottom:15px;
+}
+
+.card-text{
+font-size:20px;
+line-height:1.5;
+max-width:220px;
+}
+
+.instagram-section{
+margin-bottom:70px;
+}
+
+.instagram-btn{
+display:inline-flex;
+align-items:center;
+gap:15px;
+padding:22px 45px;
+border-radius:20px;
+text-decoration:none;
+color:#e8c36d;
+font-size:28px;
+font-weight:600;
+background:rgba(10,45,20,.6);
+border:1px solid rgba(232,195,109,.4);
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.instagram-btn:hover{
+transform:scale(1.04);
+background:rgba(20,60,30,.75);
+}
+
+.booking-box{
+max-width:750px;
+margin:auto;
+padding:50px;
+border-radius:30px;
+background:rgba(10,45,20,.65);
+border:1px solid rgba(232,195,109,.35);
+backdrop-filter:blur(14px);
+}
+
+.info-row{
+margin-top:30px;
+margin-bottom:30px;
+}
+
+.label{
+font-size:26px;
+margin-bottom:15px;
+}
+
+.info-box{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+font-size:42px;
+font-family:'Cormorant Garamond',serif;
+color:#e8c36d;
+padding:20px;
+border:1px solid rgba(232,195,109,.35);
+border-radius:18px;
+background:rgba(0,0,0,.2);
+}
+
+.call-button{
+margin-top:30px;
+display:inline-block;
+background:linear-gradient(135deg,#d4a84b,#f2d47a);
+color:#17320d;
+font-weight:700;
+padding:22px 60px;
+border-radius:18px;
+font-size:26px;
+text-decoration:none;
+transition:.3s;
+}
+
+.call-button:hover{
+transform:scale(1.05);
+}
+
+.footer{
+margin-top:70px;
+padding-bottom:30px;
+font-size:24px;
+color:#e8c36d;
+font-family:'Cormorant Garamond',serif;
+}
+
+@media(max-width:768px){
+
+.logo{
+font-size:52px;
+}
+
+.subtitle{
+font-size:24px;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.card-title{
+font-size:26px;
+}
+
+.card-text{
+font-size:18px;
+}
+
+.info-box{
+font-size:28px;
+}
+
+.instagram-btn{
+font-size:22px;
+padding:18px 25px;
+}
+}
+</style>
 </head>
+
 <body>
-  <section class="hero">
-    <h1>Golden Forest</h1>
-    <p>Затишний відпочинок на природі: альтанки, мангали та столики серед лісу. Незабаром: будинок для оренди, басейн та лазня.</p>
-    <a class="btn" href="tel:+380958988327">📞 Забронювати: +380 95 898 83 27</a>
-  </section>
 
-  <section class="section">
-    <h2>Що у нас є</h2>
-    <div class="cards">
-      <div class="card">🌲 Альтанки в лісі</div>
-      <div class="card">🔥 Мангали для відпочинку</div>
-      <div class="card">🪑 Столики на природі</div>
-      <div class="card">🏡 Незабаром: будинок, басейн та лазня</div>
-    </div>
-  </section>
+<div class="container">
 
-  <section class="section">
-    <h2>Наш Instagram</h2>
-    <a class="btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">📷 @golden_forest_dnipro</a>
-  </section>
+<section class="hero">
+<h1 class="logo">GOLDEN<br>FOREST</h1>
+<p class="subtitle">
+Затишний відпочинок на природі<br>
+в оточенні лісу
+</p>
+</section>
 
-  <section class="section">
-    <h2>Бронювання</h2>
-    <p>Телефонуйте для бронювання:</p>
-    <p class="phone">+380 95 898 83 27</p>
-    <p>Адреса:</p>
-    <p class="address">Біла Балка 42</p>
-    <a class="btn" href="tel:+380958988327">Зателефонувати зараз</a>
-  </section>
+<h2 class="section-title">ЩО У НАС Є</h2>
+
+<section class="features">
+
+<div class="card">
+<div class="card-icon">🌲</div>
+<div class="card-title">Альтанки в лісі</div>
+<div class="card-text">Затишні альтанки серед дерев для вашого відпочинку</div>
+</div>
+
+<div class="card">
+<div class="card-icon">🔥</div>
+<div class="card-title">Мангал для відпочинку</div>
+<div class="card-text">Усе необхідне для смачного відпочинку на природі</div>
+</div>
+
+<div class="card">
+<div class="card-icon">🪵</div>
+<div class="card-title">Столики на природі</div>
+<div class="card-text">Комфортні столики для компаній та сімейних зустрічей</div>
+</div>
+
+<div class="card">
+<div class="card-icon">🏡</div>
+<div class="card-title">Незабаром</div>
+<div class="card-text">Будинок, басейн та лазня</div>
+</div>
+
+</section>
+
+<section class="instagram-section">
+<h2 class="section-title">НАШ INSTAGRAM</h2>
+
+<a class="instagram-btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">
+📷 @golden_forest_dnipro
+</a>
+</section>
+
+<section class="booking-box">
+
+<h2 class="section-title">БРОНЮВАННЯ</h2>
+
+<div class="info-row">
+<div class="label">Телефонуйте для бронювання:</div>
+<div class="info-box">
+📞 +380 95 898 83 27
+</div>
+</div>
+
+<div class="info-row">
+<div class="label">Адреса:</div>
+<div class="info-box">
+📍 Біла Балка 42
+</div>
+</div>
+
+<a class="call-button" href="tel:+380958988327">
+📞 ЗАТЕЛЕФОНУВАТИ ЗАРАЗ
+</a>
+
+</section>
+
+<div class="footer">
+Природа. Спокій. Комфорт.<br>
+Ваш ідеальний відпочинок у Golden Forest
+</div>
+
+</div>
+
 </body>
 </html>
-
