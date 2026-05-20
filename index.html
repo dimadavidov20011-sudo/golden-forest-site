@@ -35,8 +35,6 @@ z-index:1000;
 
 .menu-btn{
 display:inline-flex;
-justify-content:center;
-align-items:center;
 padding:14px 24px;
 background:#d6ab3d;
 color:black;
@@ -44,13 +42,11 @@ text-decoration:none;
 font-weight:bold;
 border-radius:14px;
 font-size:18px;
-box-shadow:0 0 20px rgba(214,171,61,.25);
 transition:.3s;
 }
 
 .menu-btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 25px rgba(214,171,61,.4);
 }
 
 /* ДЕКОР */
@@ -62,19 +58,13 @@ animation:float 8s ease-in-out infinite;
 opacity:.25;
 }
 
-.floating-leaf{
-font-size:40px;
-}
-
-.floating-spark{
-font-size:24px;
-animation-duration:6s;
-}
+.floating-leaf{font-size:40px;}
+.floating-spark{font-size:24px;}
 
 .leaf1{top:10%;left:5%;}
-.leaf2{top:65%;right:6%;animation-delay:2s;}
+.leaf2{top:65%;right:6%;}
 .spark1{top:25%;right:10%;}
-.spark2{bottom:15%;left:8%;animation-delay:1.5s;}
+.spark2{bottom:15%;left:8%;}
 
 /* HERO */
 .hero{
@@ -113,14 +103,11 @@ text-shadow:0 0 20px rgba(244,208,111,.35);
 
 .subtitle{
 font-size:22px;
-max-width:700px;
-padding:0 20px;
 z-index:1;
 }
 
 /* КОНТЕЙНЕР */
 .container{
-width:100%;
 max-width:1200px;
 margin:auto;
 padding:40px 20px;
@@ -128,48 +115,48 @@ position:relative;
 z-index:1;
 }
 
-/* КАРТОЧКИ */
+/* КАРТОЧКИ (УМЕНЬШЕНЫ) */
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-bottom:70px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:18px;
+margin-bottom:60px;
 }
 
 .card{
 background:rgba(0,50,20,0.55);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,215,120,0.25);
-border-radius:25px;
-padding:35px 25px;
-min-height:280px;
-transition:.4s;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,215,120,0.2);
+border-radius:20px;
+padding:22px 18px;
+min-height:180px;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-6px);
 }
 
 .card-icon{
-font-size:54px;
-margin-bottom:20px;
+font-size:36px;
+margin-bottom:12px;
 }
 
 .card h3{
-font-size:28px;
+font-size:22px;
 color:#f4d06f;
-margin-bottom:20px;
+margin-bottom:12px;
 }
 
 .card p{
-font-size:18px;
-line-height:1.5;
+font-size:15px;
+line-height:1.4;
 }
 
 /* СЕКЦИИ */
 .section{
 margin:40px 0;
-padding:35px 20px;
+padding:30px 20px;
 background:rgba(0,50,20,0.55);
 backdrop-filter:blur(10px);
 border:1px solid rgba(255,215,120,0.25);
@@ -189,25 +176,16 @@ margin:auto;
 border-radius:25px;
 overflow:hidden;
 box-shadow:0 10px 40px rgba(0,0,0,.35);
-transition:.4s;
-}
-
-.menu-product-card:hover{
-transform:scale(1.01);
 }
 
 .menu-product-card img{
 width:100%;
 display:block;
-border-radius:25px;
 }
 
 /* КНОПКИ */
 .instagram-btn,.map-btn,.book-btn{
 display:inline-flex;
-justify-content:center;
-align-items:center;
-gap:10px;
 padding:18px 35px;
 background:#d6ab3d;
 color:black;
@@ -245,30 +223,12 @@ padding-bottom:30px;
 }
 
 @media(max-width:768px){
-.hero{
-background-attachment:scroll;
-}
-
-h1{
-font-size:38px;
-}
-
-.subtitle{
-font-size:18px;
-}
-
-.cards{
-grid-template-columns:1fr;
-}
-
-.menu-btn{
-font-size:16px;
-padding:12px 18px;
-}
-
-.instagram-btn,
-.map-btn,
-.book-btn{
+.hero{background-attachment:scroll;}
+h1{font-size:38px;}
+.subtitle{font-size:18px;}
+.cards{grid-template-columns:1fr 1fr;}
+.menu-btn{font-size:16px;padding:12px 18px;}
+.instagram-btn,.map-btn,.book-btn{
 width:100%;
 max-width:320px;
 font-size:18px;
@@ -278,18 +238,15 @@ font-size:18px;
 </head>
 <body>
 
-<!-- КНОПКА МЕНЮ -->
 <div class="top-menu">
 <a href="#menu" class="menu-btn">☰ Меню</a>
 </div>
 
-<!-- ДЕКОР -->
 <div class="floating-leaf leaf1">🌿</div>
 <div class="floating-leaf leaf2">🍃</div>
 <div class="floating-spark spark1">🌳</div>
 <div class="floating-spark spark2">🌳</div>
 
-<!-- HERO -->
 <section class="hero">
 <h1>Golden Forest</h1>
 <div class="subtitle">Місце для ідеального відпочинку на природі</div>
@@ -297,31 +254,30 @@ font-size:18px;
 
 <div class="container">
 
-<!-- КАРТОЧКИ -->
 <div class="cards">
 
 <div class="card">
 <div class="card-icon">🌲</div>
-<h3>Альтанки в лісі</h3>
-<p>Затишні альтанки серед дерев для вашого відпочинку</p>
+<h3>Альтанки</h3>
+<p>Затишний відпочинок у лісі</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🔥</div>
 <h3>Мангал</h3>
-<p>Усе необхідне для смачного відпочинку</p>
+<p>Для смачного відпочинку</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🪑</div>
 <h3>Столики</h3>
-<p>Комфортні місця для компаній</p>
+<p>Для компаній та сімей</p>
 </div>
 
 <div class="card">
 <div class="card-icon">📶</div>
 <h3>Wi-Fi</h3>
-<p>Безкоштовний інтернет на всій території</p>
+<p>Безкоштовно</p>
 </div>
 
 </div>
@@ -331,7 +287,7 @@ font-size:18px;
 <h2>Меню товарів</h2>
 
 <div class="menu-product-card">
-<img src="hotdog-menu.png" alt="Молочна сосиска">
+<img src="smoked-sausage-menu.png" alt="Копчена сосиска">
 </div>
 
 </div>
@@ -346,17 +302,12 @@ target="_blank">
 </a>
 </div>
 
-<!-- БРОНИРОВАНИЕ -->
+<!-- БРОНЮВАННЯ -->
 <div class="section">
 <h2>Бронювання</h2>
 
-<div class="info-line">
-📞 +380 99 286 35 36
-</div>
-
-<div class="info-line">
-📍 Біла Балка 52
-</div>
+<div class="info-line">📞 +380 99 286 35 36</div>
+<div class="info-line">📍 Біла Балка 52</div>
 
 <a class="map-btn"
 href="https://www.google.com/maps?q=48.463791387718715,34.86250651072183"
@@ -366,13 +317,11 @@ target="_blank">
 
 <br>
 
-<a class="book-btn"
-href="tel:+380992863536">
+<a class="book-btn" href="tel:+380992863536">
 📞 Зателефонувати
 </a>
 </div>
 
-<!-- ОПИСАНИЕ -->
 <div class="section">
 <h2>Відчуйте атмосферу Golden Forest</h2>
 <p style="font-size:20px;line-height:1.8;">
