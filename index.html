@@ -19,7 +19,7 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Montserrat',sans-serif;
-background:#0d1f12;
+background:#06240f;
 color:white;
 text-align:center;
 overflow-x:hidden;
@@ -29,11 +29,10 @@ overflow-x:hidden;
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,20,0,.35),rgba(0,20,0,.6)),
+linear-gradient(rgba(0,20,0,.45),rgba(0,20,0,.65)),
 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
-background-attachment:fixed;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -42,43 +41,38 @@ padding:20px;
 }
 
 .hero h1{
-font-size:56px;
+font-size:58px;
 color:#f4d06f;
 margin-bottom:15px;
 }
 
 .subtitle{
 font-size:22px;
-max-width:700px;
 }
 
-/* MENU BUTTON */
+/* КНОПКА МЕНЮ */
 .top-menu{
 position:fixed;
 top:20px;
 right:20px;
 z-index:999;
-background:rgba(0,50,20,0.85);
+background:rgba(0,60,25,.9);
 padding:14px 22px;
 border-radius:15px;
-border:1px solid rgba(255,215,120,.3);
+border:1px solid rgba(255,215,120,.4);
 text-decoration:none;
 color:#f4d06f;
 font-weight:bold;
 }
 
-/* CONTAINER */
+/* КОНТЕЙНЕР */
 .container{
 max-width:1200px;
 margin:auto;
 padding:50px 20px;
 }
 
-/* MENU */
-.menu-section{
-padding:30px 0;
-}
-
+/* МЕНЮ */
 .menu-section h2{
 font-size:42px;
 color:#f4d06f;
@@ -88,32 +82,34 @@ margin-bottom:40px;
 .menu-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:25px;
+gap:28px;
 }
 
 .menu-item{
-background:rgba(0,50,20,0.55);
-border:1px solid rgba(255,215,120,0.25);
-border-radius:25px;
-padding:20px;
+background:rgba(0,55,20,.65);
+border:1px solid rgba(255,215,120,.25);
+border-radius:24px;
+padding:22px;
 transition:0.3s;
 }
 
 .menu-item:hover{
 transform:translateY(-5px);
-box-shadow:0 8px 25px rgba(244,208,111,0.15);
+box-shadow:0 8px 20px rgba(244,208,111,.15);
 }
 
+/* КАРТИНКИ ТОВАРОВ */
 .menu-img{
 width:100%;
-max-height:220px;
+height:320px;
 object-fit:contain;
-border-radius:15px;
-margin-bottom:15px;
-background:white;
-padding:10px;
+border-radius:18px;
+margin-bottom:18px;
+padding:0;
+background:none;
 }
 
+/* ТЕКСТ */
 .menu-item h3{
 font-size:22px;
 margin-bottom:10px;
@@ -121,16 +117,16 @@ color:white;
 }
 
 .menu-item p{
-font-size:22px;
-color:#f4d06f;
+font-size:28px;
 font-weight:bold;
+color:#f4d06f;
 }
 
-/* CONTACT */
+/* СЕКЦИИ */
 .section{
 margin-top:50px;
 padding:35px;
-background:rgba(0,50,20,0.55);
+background:rgba(0,50,20,.55);
 border-radius:25px;
 border:1px solid rgba(255,215,120,.25);
 }
@@ -138,13 +134,12 @@ border:1px solid rgba(255,215,120,.25);
 .section h2{
 font-size:34px;
 margin-bottom:20px;
+color:#f4d06f;
 }
 
 .info-line{
 font-size:24px;
-margin:15px 0;
-color:#f4d06f;
-font-weight:bold;
+margin:14px 0;
 }
 
 .btn{
@@ -164,6 +159,7 @@ padding-bottom:30px;
 opacity:.8;
 }
 
+/* МОБИЛЬНАЯ ВЕРСИЯ */
 @media(max-width:768px){
 
 .hero h1{
@@ -178,17 +174,16 @@ font-size:18px;
 grid-template-columns:1fr;
 }
 
+.menu-img{
+height:250px;
+}
+
 .menu-item h3{
 font-size:18px;
 }
 
 .menu-item p{
-font-size:18px;
-}
-
-.top-menu{
-right:10px;
-top:10px;
+font-size:22px;
 }
 }
 </style>
@@ -253,7 +248,7 @@ top:10px;
 </div>
 
 <div class="section">
-<h2>Наш Instagram</h2>
+<h2>Instagram</h2>
 <a class="btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">
 @golden_forest_dnipro
 </a>
@@ -265,5 +260,4 @@ Golden Forest © 2026
 
 </div>
 </body>
-</html>
 </html>
