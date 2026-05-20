@@ -25,29 +25,6 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* КНОПКА МЕНЮ */
-.top-menu{
-position:fixed;
-top:20px;
-right:20px;
-z-index:1000;
-}
-
-.menu-btn{
-padding:14px 24px;
-background:#d6ab3d;
-color:black;
-text-decoration:none;
-font-weight:bold;
-border-radius:14px;
-font-size:18px;
-transition:.3s;
-}
-
-.menu-btn:hover{
-transform:scale(1.05);
-}
-
 /* HERO */
 .hero{
 height:100vh;
@@ -56,6 +33,7 @@ linear-gradient(rgba(0,20,0,.35),rgba(0,20,0,.6)),
 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
+background-attachment:fixed;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -63,7 +41,7 @@ align-items:center;
 padding:20px;
 }
 
-h1{
+.hero h1{
 font-size:56px;
 color:#f4d06f;
 margin-bottom:15px;
@@ -71,51 +49,42 @@ margin-bottom:15px;
 
 .subtitle{
 font-size:22px;
+max-width:700px;
 }
 
-/* ОБЩИЙ КОНТЕЙНЕР */
+/* MENU BUTTON */
+.top-menu{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+background:rgba(0,50,20,0.8);
+padding:14px 22px;
+border-radius:15px;
+border:1px solid rgba(255,215,120,.3);
+text-decoration:none;
+color:#f4d06f;
+font-weight:bold;
+}
+
+/* CONTAINER */
 .container{
 max-width:1200px;
 margin:auto;
-padding:40px 20px;
+padding:50px 20px;
 }
 
-/* КАРТОЧКИ */
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-bottom:60px;
+/* MENU */
+.menu-section{
+padding:30px 0;
 }
 
-.card{
-background:rgba(0,50,20,0.55);
-border-radius:20px;
-padding:25px;
-border:1px solid rgba(255,215,120,.2);
-}
-
-.card h3{
+.menu-section h2{
+font-size:42px;
 color:#f4d06f;
-margin-bottom:10px;
+margin-bottom:40px;
 }
 
-/* СЕКЦИИ */
-.section{
-margin:40px 0;
-padding:30px;
-background:rgba(0,50,20,0.55);
-border-radius:25px;
-border:1px solid rgba(255,215,120,.2);
-}
-
-.section h2{
-font-size:34px;
-margin-bottom:25px;
-color:#f4d06f;
-}
-
-/* МЕНЮ ТОВАРОВ */
 .menu-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -123,64 +92,73 @@ gap:25px;
 }
 
 .menu-item{
-background:rgba(0,30,10,.4);
-border:1px solid rgba(255,215,120,.2);
-border-radius:20px;
-padding:18px;
-transition:.3s;
+background:rgba(0,50,20,0.55);
+border:1px solid rgba(255,215,120,0.25);
+border-radius:25px;
+padding:20px;
 }
 
-.menu-item:hover{
-transform:translateY(-5px);
-}
-
-.menu-item img{
+.menu-img{
 width:100%;
-height:auto;
-border-radius:18px;
+max-height:220px;
+object-fit:contain;
+border-radius:15px;
 margin-bottom:15px;
 }
 
 .menu-item h3{
-color:#f4d06f;
 font-size:22px;
-margin-bottom:8px;
-}
-
-.price{
-font-size:28px;
-font-weight:bold;
 margin-bottom:10px;
+color:white;
 }
 
-.desc{
-font-size:16px;
-opacity:.9;
+.menu-item p{
+font-size:22px;
+color:#f4d06f;
+font-weight:bold;
 }
 
-/* КНОПКИ */
-.instagram-btn,.map-btn,.book-btn{
+/* CONTACT */
+.section{
+margin-top:50px;
+padding:35px;
+background:rgba(0,50,20,0.55);
+border-radius:25px;
+border:1px solid rgba(255,215,120,.25);
+}
+
+.section h2{
+font-size:34px;
+margin-bottom:20px;
+}
+
+.info-line{
+font-size:24px;
+margin:15px 0;
+color:#f4d06f;
+font-weight:bold;
+}
+
+.btn{
 display:inline-block;
-padding:16px 30px;
+margin-top:15px;
+padding:16px 28px;
 background:#d6ab3d;
 color:black;
 text-decoration:none;
 font-weight:bold;
 border-radius:15px;
-margin-top:15px;
 }
 
-/* FOOTER */
 .footer{
 margin-top:40px;
 padding-bottom:30px;
 opacity:.8;
 }
 
-/* МОБИЛКА */
 @media(max-width:768px){
 
-h1{
+.hero h1{
 font-size:38px;
 }
 
@@ -192,18 +170,24 @@ font-size:18px;
 grid-template-columns:1fr;
 }
 
-.menu-btn{
-font-size:16px;
-padding:12px 18px;
+.menu-item h3{
+font-size:18px;
+}
+
+.menu-item p{
+font-size:18px;
+}
+
+.top-menu{
+right:10px;
+top:10px;
 }
 }
 </style>
 </head>
 <body>
 
-<div class="top-menu">
-<a href="#menu" class="menu-btn">☰ Меню</a>
-</div>
+<a href="#menu" class="top-menu">Меню</a>
 
 <section class="hero">
 <h1>Golden Forest</h1>
@@ -212,87 +196,52 @@ padding:12px 18px;
 
 <div class="container">
 
-<div class="cards">
-<div class="card">
-<h3>🌲 Альтанки</h3>
-<p>Затишний відпочинок у лісі</p>
-</div>
-
-<div class="card">
-<h3>🔥 Мангал</h3>
-<p>Для смачного відпочинку</p>
-</div>
-
-<div class="card">
-<h3>🪑 Столики</h3>
-<p>Для компаній та сімей</p>
-</div>
-
-<div class="card">
-<h3>📶 Wi-Fi</h3>
-<p>Безкоштовно</p>
-</div>
-</div>
-
-<!-- МЕНЮ -->
-<div id="menu" class="section">
+<section id="menu" class="menu-section">
 <h2>Меню товарів</h2>
 
 <div class="menu-grid">
 
 <div class="menu-item">
-<img src="hotdog-menu.png">
+<img src="hotdog-menu.png" class="menu-img">
 <h3>Хот-дог з молочною сосискою</h3>
-<div class="price">96 грн</div>
-<div class="desc">Хот-дог з молочною сосискою</div>
+<p>96 грн</p>
 </div>
 
 <div class="menu-item">
-<img src="smoked-sausage-menu.png">
+<img src="smoked-sausage-menu.png" class="menu-img">
 <h3>Хот-дог з копченою ковбаскою</h3>
-<div class="price">96 грн</div>
-<div class="desc">Хот-дог з копченою ковбаскою</div>
+<p>96 грн</p>
 </div>
 
 <div class="menu-item">
-<img src="pizza-kovbasa.png">
+<img src="pizza-kovbasa.png" class="menu-img">
 <h3>Піца з ковбасою</h3>
-<div class="price">65 грн</div>
-<div class="desc">Піца з ковбасою</div>
+<p>65 грн</p>
 </div>
 
 <div class="menu-item">
-<img src="cheeseburger-yalovichiy.png" alt="Чізбургер Яловичий" class="menu-img">
+<img src="cheeseburger-yalovichiy.png" class="menu-img">
 <h3>Чізбургер яловичий</h3>
-<div class="price">96 грн</div>
-<div class="desc">Чізбургер яловичий</div>
+<p>96 грн</p>
 </div>
 
 </div>
+</section>
+
+<div class="section">
+<h2>Бронювання</h2>
+<div class="info-line">📞 +380 99 286 35 36</div>
+<div class="info-line">📍 Біла Балка 52</div>
+
+<a class="btn" href="https://www.google.com/maps?q=48.463791387718715,34.86250651072183" target="_blank">
+Знайти нас на карті
+</a>
 </div>
 
 <div class="section">
 <h2>Наш Instagram</h2>
-<a class="instagram-btn"
-href="https://instagram.com/golden_forest_dnipro"
-target="_blank">
-📷 @golden_forest_dnipro
-</a>
-</div>
-
-<div class="section">
-<h2>Бронювання</h2>
-<p>📞 +380 99 286 35 36</p>
-<p>📍 Біла Балка 52</p>
-
-<a class="map-btn"
-href="https://www.google.com/maps?q=48.463791387718715,34.86250651072183"
-target="_blank">
-🗺️ Знайти нас
-</a>
-<br><br>
-<a class="book-btn" href="tel:+380992863536">
-📞 Зателефонувати
+<a class="btn" href="https://instagram.com/golden_forest_dnipro" target="_blank">
+@golden_forest_dnipro
 </a>
 </div>
 
@@ -302,5 +251,4 @@ Golden Forest © 2026
 
 </div>
 </body>
-</html>
 </html>
