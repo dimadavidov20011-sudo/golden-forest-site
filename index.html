@@ -34,12 +34,12 @@ opacity:.25;
 }
 
 .floating-leaf{font-size:40px;}
-.floating-spark{font-size:24px;animation-duration:6s;}
+.floating-spark{font-size:24px;}
 
 .leaf1{top:10%;left:5%;}
-.leaf2{top:65%;right:6%;animation-delay:2s;}
+.leaf2{top:65%;right:6%;}
 .spark1{top:25%;right:10%;}
-.spark2{bottom:15%;left:8%;animation-delay:1.5s;}
+.spark2{bottom:15%;left:8%;}
 
 .hero{
 height:100vh;
@@ -53,8 +53,8 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-position:relative;
 padding:20px;
+position:relative;
 }
 
 .hero::after{
@@ -72,18 +72,14 @@ font-size:56px;
 color:#f4d06f;
 margin-bottom:15px;
 z-index:1;
-text-shadow:0 0 20px rgba(244,208,111,.35);
 }
 
 .subtitle{
 font-size:22px;
-max-width:700px;
-padding:0 20px;
 z-index:1;
 }
 
 .container{
-width:100%;
 max-width:1200px;
 margin:auto;
 padding:40px 20px;
@@ -95,47 +91,38 @@ z-index:1;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
-margin-bottom:70px;
+margin-bottom:60px;
 }
 
 .card{
-background:rgba(0,50,20,0.55);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,215,120,0.25);
+background:rgba(0,50,20,.55);
+border:1px solid rgba(255,215,120,.25);
 border-radius:25px;
-padding:35px 25px;
-min-height:280px;
+padding:30px;
 }
 
 .card-icon{
-font-size:54px;
-margin-bottom:20px;
-}
-
-.card h3{
-font-size:28px;
-color:#f4d06f;
+font-size:50px;
 margin-bottom:15px;
 }
 
-.card p{
-font-size:18px;
-line-height:1.5;
+.card h3{
+color:#f4d06f;
+margin-bottom:10px;
 }
 
 .section{
 margin:40px 0;
 padding:35px 20px;
-background:rgba(0,50,20,0.55);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,215,120,0.25);
+background:rgba(0,50,20,.55);
+border:1px solid rgba(255,215,120,.25);
 border-radius:25px;
 }
 
 .section h2{
-font-size:34px;
-margin-bottom:25px;
 color:#f4d06f;
+font-size:34px;
+margin-bottom:30px;
 }
 
 .menu-grid{
@@ -145,61 +132,54 @@ gap:25px;
 }
 
 .menu-item{
-background:rgba(0,50,20,0.55);
-border:1px solid rgba(255,215,120,0.25);
+background:rgba(0,50,20,.55);
+border:1px solid rgba(255,215,120,.25);
 border-radius:25px;
-padding:18px;
+padding:20px;
 }
 
 .menu-item img{
 width:100%;
 max-width:420px;
-height:auto;
 border-radius:15px;
 display:block;
 margin:auto;
 }
 
 .menu-item h3{
-margin-top:18px;
-font-size:20px;
-color:white;
+margin-top:15px;
+font-size:22px;
 }
 
 .price{
 margin-top:8px;
-font-size:18px;
+font-size:20px;
 font-weight:bold;
 color:#f4d06f;
 }
 
 .instagram-btn,.map-btn,.book-btn{
-display:inline-flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-padding:18px 35px;
+display:inline-block;
+padding:16px 30px;
 background:#d6ab3d;
 color:black;
 text-decoration:none;
 font-weight:bold;
 border-radius:15px;
-font-size:22px;
 margin-top:15px;
 }
 
 .info-line{
-font-size:28px;
-margin:18px 0;
+font-size:24px;
+margin:15px 0;
 color:#f4d06f;
 font-weight:bold;
 }
 
 .footer{
 margin-top:40px;
-opacity:.8;
-font-size:15px;
 padding-bottom:30px;
+opacity:.8;
 }
 
 @keyframes float{
@@ -208,18 +188,10 @@ padding-bottom:30px;
 }
 
 @media(max-width:768px){
-.hero{
-background-attachment:scroll;
-}
-h1{
-font-size:38px;
-}
-.subtitle{
-font-size:18px;
-}
-.menu-grid{
-grid-template-columns:1fr;
-}
+.hero{background-attachment:scroll;}
+h1{font-size:38px;}
+.subtitle{font-size:18px;}
+.menu-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -247,25 +219,19 @@ grid-template-columns:1fr;
 <div class="card">
 <div class="card-icon">🔥</div>
 <h3>Мангал для відпочинку</h3>
-<p>Усе необхідне для смачного відпочинку на природі</p>
-</div>
-
-<div class="card">
-<div class="card-icon">🪑</div>
-<h3>Столики на природі</h3>
-<p>Комфортні столики для компаній та сімейних зустрічей</p>
+<p>Усе необхідне для смачного відпочинку</p>
 </div>
 
 <div class="card">
 <div class="card-icon">📶</div>
 <h3>Безкоштовний Wi-Fi</h3>
-<p>Швидкий інтернет на всій території комплексу</p>
+<p>Швидкий інтернет на всій території</p>
 </div>
 </div>
 
+<!-- ЕДА -->
 <div class="section">
-<h2>Меню товарів</h2>
-
+<h2>Меню страв</h2>
 <div class="menu-grid">
 
 <div class="menu-item">
@@ -299,12 +265,6 @@ grid-template-columns:1fr;
 </div>
 
 <div class="menu-item">
-<img src="limonad-menu.png">
-<h3>Освіжаючий лимонад</h3>
-<div class="price">100 грн</div>
-</div>
-
-<div class="menu-item">
 <img src="sandwich-salyami.png">
 <h3>Сендвіч з салямі</h3>
 <div class="price">96 грн</div>
@@ -314,6 +274,20 @@ grid-template-columns:1fr;
 <img src="sandwich-shynka.png">
 <h3>Сендвіч з шинкою</h3>
 <div class="price">96 грн</div>
+</div>
+
+</div>
+</div>
+
+<!-- НАПИТКИ -->
+<div class="section">
+<h2>Напої</h2>
+<div class="menu-grid">
+
+<div class="menu-item">
+<img src="limonad-menu.png">
+<h3>Освіжаючий лимонад</h3>
+<div class="price">100 грн</div>
 </div>
 
 <div class="menu-item">
@@ -348,6 +322,7 @@ grid-template-columns:1fr;
 <h2>Бронювання</h2>
 <div class="info-line">📞 +380 99 286 35 36</div>
 <div class="info-line">📍 Біла Балка 52</div>
+
 <a class="map-btn" href="https://www.google.com/maps?q=48.463791387718715,34.86250651072183" target="_blank">
 🗺️ Знайти нас на карті
 </a>
@@ -359,7 +334,7 @@ grid-template-columns:1fr;
 
 <div class="section">
 <h2>Відчуйте атмосферу Golden Forest</h2>
-<p style="font-size:20px; max-width:800px; margin:0 auto; line-height:1.8;">
+<p style="font-size:20px;max-width:800px;margin:auto;line-height:1.8;">
 Залиште метушню міста позаду та подаруйте собі моменти справжнього відпочинку серед природи.
 Тиша лісу, свіже повітря, затишок та комфорт — усе, щоб ваш день став особливим.
 <br><br>
@@ -367,7 +342,9 @@ grid-template-columns:1fr;
 </p>
 </div>
 
-<div class="footer">Golden Forest © 2026</div>
+<div class="footer">
+Golden Forest © 2026
+</div>
 
 </div>
 </body>
