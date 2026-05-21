@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Golden Forest Дніпро</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -25,7 +24,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* Floating decorations */
+/* Декор */
 .floating-leaf,.floating-spark{
 position:fixed;
 pointer-events:none;
@@ -33,10 +32,8 @@ z-index:0;
 animation:float 8s ease-in-out infinite;
 opacity:.25;
 }
-
 .floating-leaf{font-size:40px;}
-.floating-spark{font-size:24px;}
-
+.floating-spark{font-size:24px;animation-duration:6s;}
 .leaf1{top:10%;left:5%;}
 .leaf2{top:65%;right:6%;animation-delay:2s;}
 .spark1{top:25%;right:10%;}
@@ -65,15 +62,15 @@ bottom:0;
 left:0;
 width:100%;
 height:140px;
-background:linear-gradient(to bottom, transparent, #0d1f12);
+background:linear-gradient(to bottom,transparent,#0d1f12);
 }
 
 h1{
 font-size:56px;
 color:#f4d06f;
 margin-bottom:15px;
-text-shadow:0 0 20px rgba(244,208,111,.35);
 z-index:1;
+text-shadow:0 0 20px rgba(244,208,111,.35);
 }
 
 .subtitle{
@@ -84,14 +81,14 @@ z-index:1;
 
 .container{
 width:100%;
-max-width:1200px;
+max-width:1300px;
 margin:auto;
 padding:40px 20px;
 position:relative;
 z-index:1;
 }
 
-/* INFO CARDS */
+/* Инфо карточки */
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -105,46 +102,39 @@ backdrop-filter:blur(12px);
 border:1px solid rgba(255,215,120,.25);
 border-radius:25px;
 padding:35px 25px;
-min-height:280px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 35px rgba(244,208,111,.15);
+min-height:260px;
 }
 
 .card-icon{
-font-size:52px;
+font-size:54px;
 margin-bottom:20px;
 }
 
 .card h3{
-font-size:30px;
+font-size:28px;
 color:#f4d06f;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .card p{
 font-size:18px;
-line-height:1.5;
 }
 
-/* PRODUCT MENU */
+/* МЕНЮ */
 .menu-title{
 font-size:42px;
 color:#f4d06f;
-margin-bottom:35px;
+margin-bottom:40px;
 }
 
-.products{
+.menu-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:28px;
+gap:30px;
 margin-bottom:70px;
 }
 
-.product{
+.menu-item{
 background:rgba(0,50,20,.55);
 border:1px solid rgba(255,215,120,.25);
 border-radius:25px;
@@ -152,32 +142,30 @@ padding:20px;
 transition:.3s;
 }
 
-.product:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 30px rgba(244,208,111,.15);
+.menu-item:hover{
+transform:translateY(-5px);
 }
 
-.product img{
+.menu-item img{
 width:100%;
-height:auto;
+height:320px;
+object-fit:contain;
 border-radius:18px;
-display:block;
 }
 
-.product h3{
-margin-top:18px;
+.menu-item h3{
+margin-top:20px;
 font-size:22px;
-font-weight:700;
 }
 
 .price{
-font-size:18px;
-margin-top:8px;
-color:#f4d06f;
+font-size:20px;
 font-weight:bold;
+color:#f4d06f;
+margin-top:8px;
 }
 
-/* Sections */
+/* Секции */
 .section{
 margin:40px 0;
 padding:35px 20px;
@@ -194,9 +182,8 @@ margin-bottom:25px;
 
 .instagram-btn,.map-btn,.book-btn{
 display:inline-flex;
-align-items:center;
 justify-content:center;
-gap:10px;
+align-items:center;
 padding:18px 35px;
 background:#d6ab3d;
 color:black;
@@ -205,13 +192,6 @@ font-weight:bold;
 border-radius:15px;
 font-size:22px;
 margin-top:15px;
-transition:.3s;
-}
-
-.instagram-btn:hover,
-.map-btn:hover,
-.book-btn:hover{
-transform:scale(1.05);
 }
 
 .info-line{
@@ -233,7 +213,6 @@ padding-bottom:30px;
 50%{transform:translateY(-20px);}
 }
 
-/* Mobile */
 @media(max-width:768px){
 
 .hero{
@@ -248,20 +227,12 @@ font-size:38px;
 font-size:18px;
 }
 
-.products{
+.menu-grid{
 grid-template-columns:1fr;
 }
 
-.menu-title{
-font-size:32px;
-}
-
-.product h3{
-font-size:18px;
-}
-
-.card h3{
-font-size:24px;
+.menu-item img{
+height:240px;
 }
 
 .info-line{
@@ -272,7 +243,6 @@ font-size:22px;
 width:100%;
 max-width:320px;
 font-size:18px;
-padding:16px;
 }
 }
 </style>
@@ -291,50 +261,7 @@ padding:16px;
 
 <div class="container">
 
-<h2 class="menu-title">Меню товарів</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="hotdog-menu.png">
-<h3>Хот-дог з молочною сосискою</h3>
-<div class="price">96 грн</div>
-</div>
-
-<div class="product">
-<img src="smoked-sausage-menu.png">
-<h3>Хот-дог з копченою ковбаскою</h3>
-<div class="price">96 грн</div>
-</div>
-
-<div class="product">
-<img src="pizza-kovbasa.png">
-<h3>Піца з ковбасою</h3>
-<div class="price">65 грн</div>
-</div>
-
-<div class="product">
-<img src="cheeseburger-yalovichiy.png">
-<h3>Чізбургер яловичий</h3>
-<div class="price">96 грн</div>
-</div>
-
-<div class="product">
-<img src="kartoplya-fri.png">
-<h3>Картопля фрі</h3>
-<div class="price">115 грн</div>
-</div>
-
-<div class="product">
-<img src="limonad-menu.png">
-<h3>Освіжаючий лимонад</h3>
-<div class="price">100 грн</div>
-</div>
-
-</div>
-
 <div class="cards">
-
 <div class="card">
 <div class="card-icon">🌲</div>
 <h3>Альтанки в лісі</h3>
@@ -350,19 +277,60 @@ padding:16px;
 <div class="card">
 <div class="card-icon">🪑</div>
 <h3>Столики на природі</h3>
-<p>Комфортні столики для компаній</p>
+<p>Комфортні столики для компаній та сімейних зустрічей</p>
 </div>
 
 <div class="card">
 <div class="card-icon">📶</div>
 <h3>Безкоштовний Wi-Fi</h3>
-<p>Швидкий інтернет на всій території</p>
+<p>Швидкий інтернет на всій території комплексу</p>
+</div>
 </div>
 
-<div class="card">
-<div class="card-icon">🏡</div>
-<h3>Незабаром</h3>
-<p>Будинок, басейн та лазня</p>
+<h2 class="menu-title">Меню товарів</h2>
+
+<div class="menu-grid">
+
+<div class="menu-item">
+<img src="hotdog-menu.png">
+<h3>Хот-дог з молочною сосискою</h3>
+<div class="price">96 грн</div>
+</div>
+
+<div class="menu-item">
+<img src="smoked-sausage-menu.png">
+<h3>Хот-дог з копченою ковбаскою</h3>
+<div class="price">96 грн</div>
+</div>
+
+<div class="menu-item">
+<img src="pizza-kovbasa.png">
+<h3>Піца з ковбасою</h3>
+<div class="price">65 грн</div>
+</div>
+
+<div class="menu-item">
+<img src="cheeseburger-yalovichiy.png">
+<h3>Чізбургер яловичий</h3>
+<div class="price">96 грн</div>
+</div>
+
+<div class="menu-item">
+<img src="kartoplya-fri.png">
+<h3>Картопля фрі</h3>
+<div class="price">115 грн</div>
+</div>
+
+<div class="menu-item">
+<img src="limonad.png">
+<h3>Освіжаючий лимонад</h3>
+<div class="price">100 грн</div>
+</div>
+
+<div class="menu-item">
+<img src="sandwich-salyami.png">
+<h3>Сендвіч з салямі</h3>
+<div class="price">96 грн</div>
 </div>
 
 </div>
@@ -390,7 +358,7 @@ padding:16px;
 
 <div class="section">
 <h2>Відчуйте атмосферу Golden Forest</h2>
-<p style="font-size:20px;max-width:800px;margin:auto;line-height:1.8;">
+<p style="font-size:20px; max-width:800px; margin:0 auto; line-height:1.8;">
 Залиште метушню міста позаду та подаруйте собі моменти справжнього відпочинку серед природи.
 Тиша лісу, свіже повітря, затишок та комфорт — усе, щоб ваш день став особливим.
 <br><br>
