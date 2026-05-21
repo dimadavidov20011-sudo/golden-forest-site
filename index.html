@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Golden Forest Дніпро</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,33 +18,31 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Montserrat',sans-serif;
-background:#0d1f12;
+background:#032d16;
 color:white;
 text-align:center;
 overflow-x:hidden;
 }
 
-/* floating */
+/* фоновые элементы */
 .floating-leaf,.floating-spark{
 position:fixed;
 pointer-events:none;
 z-index:0;
-opacity:.2;
 animation:float 8s ease-in-out infinite;
+opacity:.25;
 }
-
 .floating-leaf{font-size:40px;}
-.floating-spark{font-size:24px;}
-
+.floating-spark{font-size:24px;animation-duration:6s;}
 .leaf1{top:10%;left:5%;}
-.leaf2{top:70%;right:6%;}
-.spark1{top:30%;right:10%;}
-.spark2{bottom:15%;left:8%;}
+.leaf2{top:65%;right:6%;animation-delay:2s;}
+.spark1{top:25%;right:10%;}
+.spark2{bottom:15%;left:8%;animation-delay:1.5s;}
 
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,20,0,.4),rgba(0,20,0,.7)),
+linear-gradient(rgba(0,20,0,.35),rgba(0,20,0,.6)),
 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
@@ -65,32 +62,33 @@ bottom:0;
 left:0;
 width:100%;
 height:140px;
-background:linear-gradient(to bottom, transparent, #0d1f12);
+background:linear-gradient(to bottom, transparent, #032d16);
 }
 
 h1{
-font-size:58px;
+font-size:56px;
 color:#f4d06f;
-text-shadow:0 0 20px rgba(244,208,111,.3);
 margin-bottom:15px;
-z-index:2;
+text-shadow:0 0 20px rgba(244,208,111,.35);
+z-index:1;
 }
 
 .subtitle{
 font-size:22px;
 max-width:700px;
-z-index:2;
+padding:0 20px;
+z-index:1;
 }
 
 .container{
-max-width:1300px;
+max-width:1200px;
 margin:auto;
 padding:40px 20px;
 position:relative;
 z-index:1;
 }
 
-/* info cards */
+/* инфо карточки */
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -99,109 +97,112 @@ margin-bottom:70px;
 }
 
 .card{
-background:rgba(0,50,20,.55);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,215,120,.25);
+background:rgba(0,50,20,0.55);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,215,120,0.25);
 border-radius:25px;
-padding:30px;
+padding:35px 25px;
+min-height:280px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 }
 
 .card-icon{
-font-size:50px;
-margin-bottom:15px;
+font-size:54px;
+margin-bottom:20px;
 }
 
 .card h3{
-color:#f4d06f;
 font-size:28px;
+color:#f4d06f;
 margin-bottom:15px;
 }
 
-/* MENU */
-.menu-section{
-margin-bottom:70px;
+.card p{
+font-size:18px;
+line-height:1.5;
 }
 
-.menu-title{
-font-size:38px;
-color:#f4d06f;
-margin-bottom:35px;
-}
-
+/* меню товаров */
 .menu-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:25px;
+margin-top:40px;
+margin-bottom:60px;
 }
 
 .menu-item{
-background:rgba(0,50,20,.55);
-border:1px solid rgba(255,215,120,.25);
+background:rgba(0,50,20,0.55);
+border:1px solid rgba(255,215,120,0.25);
 border-radius:25px;
 padding:20px;
-transition:.3s;
-}
-
-.menu-item:hover{
-transform:translateY(-5px);
 }
 
 .menu-item img{
 width:100%;
-max-width:500px;
+max-width:420px;
 height:auto;
-border-radius:18px;
+border-radius:16px;
 display:block;
 margin:auto;
 }
 
 .menu-item h3{
-font-size:20px;
 margin-top:18px;
-margin-bottom:10px;
+font-size:20px;
 }
 
 .price{
 color:#f4d06f;
 font-weight:bold;
 font-size:18px;
+margin-top:8px;
 }
 
-/* sections */
 .section{
 margin:40px 0;
-padding:35px;
-background:rgba(0,50,20,.55);
+padding:35px 20px;
+background:rgba(0,50,20,0.55);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,215,120,0.25);
 border-radius:25px;
-border:1px solid rgba(255,215,120,.25);
 }
 
 .section h2{
-font-size:32px;
+font-size:34px;
 margin-bottom:25px;
 }
 
 .instagram-btn,.map-btn,.book-btn{
-display:inline-block;
+display:inline-flex;
+justify-content:center;
+align-items:center;
+gap:10px;
 padding:18px 35px;
 background:#d6ab3d;
 color:black;
-font-weight:bold;
 text-decoration:none;
+font-weight:bold;
 border-radius:15px;
-margin-top:10px;
+font-size:22px;
+margin-top:15px;
 }
 
 .info-line{
-font-size:24px;
-margin:15px 0;
+font-size:28px;
+margin:18px 0;
 color:#f4d06f;
+font-weight:bold;
 }
 
 .footer{
 margin-top:40px;
-padding-bottom:30px;
 opacity:.8;
+font-size:15px;
+padding-bottom:30px;
 }
 
 @keyframes float{
@@ -210,25 +211,20 @@ opacity:.8;
 }
 
 @media(max-width:768px){
-
 .hero{
 background-attachment:scroll;
 }
-
 h1{
 font-size:38px;
 }
-
 .subtitle{
 font-size:18px;
 }
-
-.menu-grid{
+.cards{
 grid-template-columns:1fr;
 }
-
-.menu-item img{
-max-width:100%;
+.menu-grid{
+grid-template-columns:1fr;
 }
 }
 </style>
@@ -248,7 +244,6 @@ max-width:100%;
 <div class="container">
 
 <div class="cards">
-
 <div class="card">
 <div class="card-icon">🌲</div>
 <h3>Альтанки в лісі</h3>
@@ -270,14 +265,11 @@ max-width:100%;
 <div class="card">
 <div class="card-icon">📶</div>
 <h3>Безкоштовний Wi-Fi</h3>
-<p>Швидкий інтернет на всій території</p>
+<p>Швидкий інтернет на всій території комплексу</p>
+</div>
 </div>
 
-</div>
-
-<!-- MENU -->
-<div class="menu-section">
-<h2 class="menu-title">Меню товарів</h2>
+<h2 style="margin-bottom:30px;color:#f4d06f;">Меню товарів</h2>
 
 <div class="menu-grid">
 
@@ -329,7 +321,12 @@ max-width:100%;
 <div class="price">96 грн</div>
 </div>
 
+<div class="menu-item">
+<img src="voda-morshynska.png">
+<h3>Вода Моршинська Sport 0,75 л</h3>
+<div class="price">25 грн</div>
 </div>
+
 </div>
 
 <div class="section">
@@ -347,7 +344,7 @@ max-width:100%;
 <a class="map-btn" href="https://www.google.com/maps?q=48.463791387718715,34.86250651072183" target="_blank">
 🗺️ Знайти нас на карті
 </a>
-<br><br>
+<br>
 <a class="book-btn" href="tel:+380992863536">
 📞 Зателефонувати зараз
 </a>
@@ -355,7 +352,7 @@ max-width:100%;
 
 <div class="section">
 <h2>Відчуйте атмосферу Golden Forest</h2>
-<p style="font-size:20px;line-height:1.8;">
+<p style="font-size:20px; max-width:800px; margin:0 auto; line-height:1.8;">
 Залиште метушню міста позаду та подаруйте собі моменти справжнього відпочинку серед природи.
 Тиша лісу, свіже повітря, затишок та комфорт — усе, щоб ваш день став особливим.
 <br><br>
@@ -368,6 +365,5 @@ Golden Forest © 2026
 </div>
 
 </div>
-
 </body>
 </html>
