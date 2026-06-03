@@ -10,6 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+  @media(max-width:768px){
+.hero{background-attachment:scroll;}
+h1{font-size:38px;}
+.subtitle{font-size:18px;}
+.menu-grid{grid-template-columns:1fr;}
+}
+
+/* ВОТ СЮДА ВСТАВИТЬ CSS БЕЛКИ */
+
+.forest-squirrel{
+...
+}
+
+@media(max-width:1200px){
+.forest-squirrel{
+display:none;
+}
+}
 *{
 margin:0;
 padding:0;
@@ -524,6 +542,18 @@ font-size:14px;
 Golden Forest © 2026
 </div>
 
+</div>
+  <div class="forest-squirrel">
+    <div class="branch"></div>
+
+    <div class="squirrel">
+        <div class="tail"></div>
+        <div class="body"></div>
+        <div class="head"></div>
+        <div class="ear ear1"></div>
+        <div class="ear ear2"></div>
+        <div class="nut"></div>
+    </div>
 </div>
 </body>
 </html>
